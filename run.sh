@@ -1,3 +1,2 @@
 #!/bin/sh
-cd build
-./coeder
+./build/coeder
