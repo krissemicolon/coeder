@@ -1,0 +1,22 @@
+cc     = gcc
+cflags = -Wall -march=native
+
+rule compile
+  command = $cc $cflags -c $in -o $out
+
+rule link
+  command = $cc $in -o $out
+
+rule install
+    command = mv coeder /usr/local/bin
+
+rule remove
+    command = rm /usr/local/bin/coeder
+
+build src/main.o: compile src/main.c
+build coeder: link src/main.o
+
+build install: install
+build remove: remove
+
+default coeder
