@@ -17,7 +17,7 @@ jobs:
     - name: Build
       shell: bash
       working-directory: ${{github.workspace}}/build
-      run: meson compilee
+      run: meson compile
 
     - name: Test
       working-directory: ${{github.workspace}}/build
