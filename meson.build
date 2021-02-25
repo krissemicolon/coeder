@@ -11,5 +11,5 @@ executable(
     'coeder',
     'src/main.c',
     'src/eventhandler.c',
-    dependencies : gtk, gtksourceview
+    dependencies : [gtk, gtksourceview]
 )
