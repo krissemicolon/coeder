@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Create Build Environment
-      run: meson setup build
+      run: sudo apt install meson ninja-build; meson setup build
 
     - name: Build
       shell: bash
