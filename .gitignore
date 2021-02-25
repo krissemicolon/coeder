@@ -1,2 +1,4 @@
 coeder
 build/
+.vscode/
+glade/window_main.glade~
