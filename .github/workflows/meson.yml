@@ -20,4 +20,4 @@ jobs:
     - name: Build Project
       shell: bash
       working-directory: ${{github.workspace}}/build
-      run: meson compile
+      run: ninja
