@@ -1,0 +1,25 @@
+name: Meson
+
+on: [push]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Create Build Environment
+      run: meson setup build
+
+    - name: Build
+      shell: bash
+      working-directory: ${{github.workspace}}/build
+      run: meson compileE
+
+    - name: Test
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      run: ./coeder
