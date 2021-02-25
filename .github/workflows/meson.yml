@@ -11,15 +11,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Create Build Environment
-      run: sudo apt install meson ninja-build libgtk-3-dev -y; meson setup build
+    - name: Install Dependencies
+      run: sudo apt install meson ninja-build libgtk-3-dev -y
 
-    - name: Build
+    - name: Setup Build directory
+    - run: meson setup build
+    
+    - name: Build Project
       shell: bash
       working-directory: ${{github.workspace}}/build
       run: meson compile
-
-    - name: Test
-      working-directory: ${{github.workspace}}/build
-      shell: bash
-      run: ./coeder
