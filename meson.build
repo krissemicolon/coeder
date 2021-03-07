@@ -1,4 +1,6 @@
-project('coeder', 'c',
+project(
+  'coeder',
+  'c',
   version : '1.0.0',
   license : 'GPLv3'
 )
@@ -10,6 +12,8 @@ gtksourceview = dependency('gtksourceview-3.0')
 executable(
     'coeder',
     'src/main.c',
+    'src/file.c',
+    'src/gui.c',
     'src/eventhandler.c',
     dependencies : [gtk, gtksourceview]
 )
